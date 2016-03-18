@@ -17,3 +17,13 @@ ErrProc:
     MsgBox "ERROR " & Err.Number & " - " & Err.Description, vbCritical, "loadFile_Click"
 End Function
 
+' Hua 20151202 call proc usp_getDCs() to load DCs to MRADB
+Private Sub getDCs_Click()
+    With CurrentDb.QueryDefs("qPass")
+    .SQL = "exec dbo.usp_getDCs"
+    .ReturnsRecords = False
+    .Execute
+    End With
+    MsgBox "Process Complete", vbInformation, " "
+End Sub
+
