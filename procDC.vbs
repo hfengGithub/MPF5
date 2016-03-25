@@ -345,4 +345,4 @@ Sub updatePriceAdjFile()
     MsgBox "The price adjustments have been sent."
 End Sub
 
-Set NewBook = Workbooks.Ad
+Set NewBook = Workbooks.Add
